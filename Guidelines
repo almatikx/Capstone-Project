@@ -7,3 +7,18 @@ Time for weekly meeting:
 Time for weekly meeting with Supervisor.
 Milestone list
 
+Project Management tool is Trello. 
+
+Identify the issue: Our Continuum robot is inflexible but very rigid. 
+When we control it with our mechanism, the movement operation looks very slow, 
+insufficient, imperfect and inflexible. And also we need to increase its lifting capacity. 
+We also need to design a gripper that can lift objects weighing 1-2 kg.
+
+We do not quite understand the fundamental control of Continuum. 
+2 years ago, my friend and I decided to design a manipulator with stepper motors.
+As a result, we failed due to lack of knowledge about the design principles of manipulators. 
+Because in this case, we do not have a clear idea of ​​​​how to design a proper Continuum robot. 
+That is why this study. We need knowledge about pulley mechanisms, rigidity, spring with motor control and so on. 
+We need to test many times until graduation day. 
+
+
