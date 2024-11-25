@@ -1,0 +1,8 @@
+moveit_inpipe:
+  kinematics_solver: kdl_kinematics_plugin/KDLKinematicsPlugin
+  kinematics_solver_search_resolution: 0.01   # Increase search resolution for faster planning
+  kinematics_solver_timeout: 0.1              # Give the solver more time to find solutions
+  goal_joint_tolerance: 0.001                 # Relax joint tolerance to 1 milliradian
+  goal_position_tolerance: 0.001              # Relax position tolerance to 1 mm
+  goal_orientation_tolerance: 0.01            # Relax orientation tolerance to 10 milliradians
+

@@ -1,0 +1,73 @@
+
+<launch>
+
+<arg name="world" default="empty"/>
+
+<arg name="paused" default="false" />
+
+<arg name="use_sim_time" default="true" />
+
+<arg name="gui" default="true" />
+
+<arg name="headless" default="false" />
+
+<arg name="debug" default="true" />
+
+<arg name="arg_x" default="0.00" />
+
+<arg name="arg_y" default="0.00" />
+
+<arg name="arg_z" default="0.00" />
+
+<arg name="arg_R" default="0.00" />
+
+<arg name="arg_P" default="0.00" />
+  
+<arg name="arg_Y" default="0.00" />
+
+
+<include file="$(find gazebo_ros)/launch/empty_world.launch">
+
+	<arg name="world_name" value="$(find gazebo_robot)/worlds/mybot.world" />
+
+	<arg name="debug" value="$(arg debug)" />
+
+	<arg name="gui" value="$(arg gui)" />
+
+	<arg name="paused" value="$(arg paused)" />
+
+	<arg name="use_sim_time" value="$(arg use_sim_time)" />
+
+	<arg name="headless" value="$(arg headless)" />
+
+</include>
+
+
+<!-- URDF file path -->
+  <param name="robot_description" textfile="$(find inpipe_description)/urdf/main_urdf_assembly_new.urdf" />
+
+<!-- Spawn the robot model in Gazebo -->
+  <node name="spawn_urdf" 
+        pkg="gazebo_ros" 
+        type="spawn_model" 
+        respawn = "false"
+        output = "screen"
+        args="-x $(arg arg_x) -y $(arg arg_y) -z $(arg arg_z) -Y $(arg arg_Y) 
+              -param robot_description -urdf 
+              -model main_urdf_assembly_new 
+              -J joint_1 0.0 -J joint_2 0.0 -J joint_3 0.0" />
+
+
+<!-- ROS control robot Launch file -->
+
+<include file = "$(find inpipe_control)/launch/moveit_robot_control.launch"/>
+
+
+ 
+
+
+<!--<param name="robot_description1" command="$(find xacro)/xacro '$(find robot_description)/urdf/box.xacro'"/>
+<node name="urdf_spawner1" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -model robot1 -param robot_description1" />
+-->
+
+</launch>

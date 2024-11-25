@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+     
+     
+<robot
+  name="main_urdf_assembly_new">
+  
+  <link name="world"/>
+  <joint name="base_joint" type="fixed">
+  <parent link="world"/>
+  <child link="base_link"/>
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.03"/>
+  </joint>
+  
+  
+<link name="base_link">
+  
+	    <inertial>
+	      <origin xyz="0 0 0" rpy="0 0 0" />
+	      <mass value="0.01" />
+	      <inertia
+		ixx="0.01" ixy="0.0" ixz="0.0"
+		iyy="0.01" iyz="0.0" izz="0.01" />
+	    </inertial>
+    
+	    <visual>
+	    <origin xyz="0 0 0" rpy="0 0 0" />
+	    <geometry>
+	    <mesh filename="package://inpipe_description/meshes/base_link.STL" />
+	    </geometry>
+    <material name="green">
+       <color rgba="0.0 0.8 0.0 1.0" />
+    </material>
+            </visual>
+            <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+            <mesh filename="package://inpipe_description/meshes/base_link.STL" />
+            </geometry>
+            </collision>
+</link>
+
+  
+
+
+  
+<link name="link_1">
+
+    <inertial>
+     <origin xyz="0 0 0" rpy="0 0 0" />
+     <mass value="0.01" />
+     <inertia
+      ixx="0.01" ixy="0.0" ixz="0.0"
+      iyy="0.01" iyz="0.0" izz="0.01" />
+    </inertial>
+    
+    <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+    <mesh filename="package://inpipe_description/meshes/link_1.STL" />
+    </geometry>
+  <material name="gold">
+    <color rgba="1.0 0.843 0.0 1.0" />
+  </material>
+    </visual>
+    
+    <collision>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+    <mesh filename="package://inpipe_description/meshes/link_1.STL" />
+    </geometry>
+    </collision>
+    
+</link>
+
+
+
+
+
+<link name="link_2">
+    
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia
+        ixx="0.01" ixy="0.0" ixz="0.0"
+	iyy="0.01" iyz="0.0" izz="0.01" />
+    </inertial>
+    
+    <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+    <mesh filename="package://inpipe_description/meshes/link_2.STL" />
+    </geometry>
+  <material name="green">
+    <color rgba="0.0 0.8 0.0 1.0" />
+  </material>
+    </visual>
+    
+    <collision>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+    <mesh filename="package://inpipe_description/meshes/link_2.STL" />
+    </geometry>
+    </collision>
+    
+</link>
+
+
+
+
+  
+<link name="link_3">
+    
+    <inertial>
+      <origin
+        xyz="0.0100844663060304 6.13779200576703E-05 -0.011997538970718" rpy="0 0 0" />
+      <mass value="0.01" />
+      <inertia
+        ixx="1.1212917780142E-05" ixy="-1.13775385716154E-08" ixz="-3.93317930034554E-07"
+        iyy="1.413273298445E-05" iyz="1.05670911320741E-08" izz="1.41351338347012E-05" />
+    </inertial>
+    
+    
+    <visual>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+    <mesh filename="package://inpipe_description/meshes/link_3.STL" />
+    </geometry>
+  <material name="gold">
+    <color rgba="1.0 0.843 0.0 1.0" />
+  </material>
+    </visual>
+    
+    
+    <collision>
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <geometry>
+    <mesh filename="package://inpipe_description/meshes/link_3.STL" />
+    </geometry>
+    </collision>
+    
+</link>
+
+
+
+
+
+  
+  
+<joint name="joint_1" type="revolute">
+
+    <origin xyz="0 0 0.02006" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="link_1" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.2" upper="0.1" effort="0.55" velocity="6" />
+    
+</joint>
+  
+  
+<joint name="joint_2" type="revolute">
+    
+    <origin xyz="0.019878 4.096E-05 0.0599" rpy="1.5708 0 1.5708" />
+    <parent link="link_1" />
+    <child link="link_2" />
+    <axis xyz="0 0 -1" />
+    <limit lower="-3.2" upper="0.1" effort="0.55" velocity="6" />
+    
+</joint>
+  
+    
+<joint name="joint_3" type="revolute">
+    
+    <origin xyz="0.18 0.00039788 0" rpy="0 0 1.5708" />
+    <parent link="link_2" />
+    <child link="link_3" />
+    <axis xyz="0 0 1" />
+    <limit
+      lower="-3.2" upper="0.1" effort="0.4" velocity="10" />
+</joint>
+
+
+
+<transmission name="tran1">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="joint_1">
+	 <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	</joint>
+	<actuator name="motor1">
+	 <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	<mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+ </transmission>
+
+ 
+ <transmission name="tran2">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="joint_2">
+	 <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	</joint>
+	<actuator name="motor2">
+	 <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	<mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+ </transmission>
+
+ 
+ <transmission name="tran3">
+	<type>transmission_interface/SimpleTransmission</type>
+	<joint name="joint_3">
+	 <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	</joint>
+	<actuator name="motor3">
+	 <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+	<mechanicalReduction>1</mechanicalReduction>
+	</actuator>
+ </transmission>
+ 
+ 
+ 
+ 
+ <gazebo>
+     <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/robot</robotNamespace>
+     </plugin>
+ </gazebo>
+ 
+ 
+ 
+ 
+ <gazebo reference="base_link">
+ 	<material> Gazebo/Green </material>
+ 	<selfCollide>true</selfCollide>
+ </gazebo>
+ 
+ 
+ <gazebo reference="link_1">
+  	<material> Gazebo/Gold </material>
+  	<selfCollide>true</selfCollide>
+  	
+ </gazebo>
+ 
+ <gazebo reference="link_2">
+  	<material> Gazebo/Green </material>
+ 	<selfCollide>true</selfCollide>
+ </gazebo>
+ 
+ <gazebo reference="link_3">
+  	<material> Gazebo/Gold </material>
+ 	<selfCollide>true</selfCollide>
+ </gazebo>
+ 
+ 
+
+
+
+
+
+</robot>
