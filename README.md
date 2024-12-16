@@ -8,6 +8,12 @@
 ##### 4. Future Adaptation to the META Quest Pro virtual World
 ##### 5. Manipulator with Added camera and motion based on the Machine Learning. 
 
+![Gazebo Robot](images/gazebo_manipulator.png)
+
+![Real Robot](images/real_manipulator.jpg)
+
+
+
 ##### By downloading capstone_project, you can simulate the Robot in Gazebo. MoveIt control also is available with Rviz Interface.
 
 ```bash
