@@ -8,7 +8,7 @@
 ##### 4. Future Adaptation to the META Quest Pro virtual World
 ##### 5. Manipulator with Added camera and motion based on the Machine Learning. 
 
-![Gazebo Robot](image/gazebo_manipulator.png)
+![Gazebo Robot](image/gazebo_manipulator.jpg)
 
 ![Real Robot](image/real_manipulator.jpg)
 
